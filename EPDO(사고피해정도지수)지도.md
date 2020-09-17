@@ -1,23 +1,42 @@
-##EPDO(사고피해정도지수)지도_README
+# EPDO(사고피해정도지수)지도_README
 
-##EPDO= (12*사망사고건수) + (3*부상사고건수) + 물피 사고##
-###########################
+## # 기초환경설치
+### package설치 (dplyr, writexl, readxl, ggmap)
 
-### package설치 
-	dplyr, writexl, readxl, ggmap 패키지를 설치합니다.
+```c 
+install.packages("dplyr")
+
+install.packages("writexl")
+
+install.packages("readxl")
+
+install.packages("ggmap")
+```	
 
 ### library 불러오기
-	그 후 아래에 library를 실행합니다.
+```c 
+library(dplyr)
 
-######## 대전광역시 사망사고건수  -시작- ########
+library(writexl)
+
+library(readxl)
+
+library(dplyr)
+```
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+
+## # 대전광역시 사망사고건수
 
 ### 원본 데이터 불러오기
-	data <- read.csv(file.choose()) 코드를 실행하여 첨부한 원본데이터 (가해자차종 또는 피해자차종이 이륜차인 교통사고 정보(2015~2019년).csv)를 불러옵니다.
-
-### 불러온 데이터 확인
-	head함수를 통해 데이터가 잘 불러져왔는지 확인합니다.
++ 코드를 실행하여 첨부한 원본데이터 (가해자차종 또는 피해자차종이 이륜차인 교통사고 정보(2015~2019년).csv)를 불러오기
+```c 
+data <- read.csv(file.choose())
+```
 
 ### 필요한 변수 선택
+
 	filter함수를 통해 원본 데이터(data)에서 사용할 변수들만 뽑아옵니다.
 
 ### 뽑힌 데이터 확인
