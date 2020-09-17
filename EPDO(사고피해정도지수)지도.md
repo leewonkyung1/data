@@ -1,4 +1,4 @@
-# EPDO(사고피해정도지수)지도_README
+# EPDO(사고피해정도지수)_동별 지도 작성_README
 
 ## # 기초환경설치
 ### package설치 (dplyr, writexl, readxl, ggmap)
