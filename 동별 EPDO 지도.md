@@ -38,13 +38,13 @@ data <- read.csv(file.choose())
 ### 필요한 변수 선택
 + filter()를 통해 원본 데이터(data)에서 사용할 변수들만 뽑아오기
 ```c 
-data1<-filter(data,가해자신체상해정도=="사망"&발생지_시도=="대전")
+data1 <- filter(data,가해자신체상해정도=="사망"&발생지_시도=="대전")
 ```
 
 ### 동별 사망사고건수 데이터 생성
 + group_by()와 summarise()를 통해 동별로 사고건수를 뽑아 data2에 저장
 ```c 
-data2<-group_by(data1,법정동명) %>% summarise(n=n())
+data2 <- group_by(data1,법정동명) %>% summarise(n=n())
 ```
 
 ### 뽑힌 데이터 개수 확인
@@ -75,7 +75,7 @@ data5 <- filter(data4,발생지_시도=="대전")
 ### 동별 부상사고건수 데이터 생성
 + group_by()와 summarise()를 통해 동별로 사고건수를 뽑아 data6에 저장
 ```c
-data6<-group_by(data5,법정동명) %>% summarise(n=n())
+data6 <- group_by(data5,법정동명) %>% summarise(n=n())
 ```
 
 ### 뽑힌 데이터 개수 확인
@@ -137,7 +137,7 @@ Dong <- read_excel(file.choose())
 ### 점 찍을 지도 위치 지정
 + 대전광역시가 중심이 되는 지도가 나타날 수 있는 경도,위도 설정(구글 맵 참고)
 ```c
-boxLocation<-c(127.378953,36.321655)
+boxLocation <- c(127.378953,36.321655)
 ```
 
 ### 구글 맵 인증key 등록 
@@ -149,7 +149,7 @@ register_google(key='AIzaSyALhVtJEUZzICnp4sMWulAJRPyFrraQMqg')
 ### 대전광역시의 구글 지도 작성
 + get_map()를 통해 설정한 boxLocation의 위치에 지도 타입과 출처를 작성하고, zoom으로 지도 확대
 ```c
-KrMap<-get_map(boxLocation, maptype="roadmap",source="google",zoom=11)
+KrMap <- get_map(boxLocation, maptype="roadmap",source="google",zoom=11)
 ```
 
 ### 동별 EPDO 지도 작성(동별 위치 점 찍기, 범례 위치 수정)
